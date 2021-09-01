@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Apps Factory Task</string>
+    <string name="title_local_albums">Albums</string>
+    <string name="title_search_artist">Search Artist</string>
+    <string name="title_top_albums">Top Albums</string>
+    <string name="title_tracks">Tracks</string>
+    <string name="hint_search_artist">Artist name</string>
+    <string name="artist_not_found">Artist not found</string>
+    <string name="error">Something went wrong!</string>
+    <string name="no_local_albums">No saved albums. Press search to find artists and albums.</string>
+    <string name="button_search">Search</string>
+    <string name="delete_album">Delete the album?</string>
+</resources>

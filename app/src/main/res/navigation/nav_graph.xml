@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/albumsFragment">
+
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.test.appsfactorytask.screen.albums.view.AlbumsFragment"
+        android:label="AlbumsFragment">
+        <action
+            android:id="@+id/action_albumsFragment_to_searchArtistFragment"
+            app:destination="@id/searchArtistFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_in_right" />
+        <action
+            android:id="@+id/action_albumsFragment_to_tracksBottomSheetFragment"
+            app:destination="@id/tracksBottomSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchArtistFragment"
+        android:name="com.test.appsfactorytask.screen.searchartist.view.SearchArtistFragment"
+        android:label="SearchArtistFragment">
+        <action
+            android:id="@+id/action_searchArtistFragment_to_topAlbumsFragment"
+            app:destination="@id/topAlbumsFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_in_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/topAlbumsFragment"
+        android:name="com.test.appsfactorytask.screen.topalbums.view.TopAlbumsFragment"
+        android:label="TopAlbumsFragment">
+        <argument
+            android:name="artist"
+            app:argType="com.test.appsfactorytask.common.model.ArtistModel" />
+        <action
+            android:id="@+id/action_topAlbumsFragment_to_tracksBottomSheetFragment"
+            app:destination="@id/tracksBottomSheetFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/tracksBottomSheetFragment"
+        android:name="com.test.appsfactorytask.screen.tracks.view.TracksBottomSheetFragment"
+        android:label="TracksBottomSheetFragment">
+        <argument
+            android:name="album"
+            app:argType="com.test.appsfactorytask.common.model.AlbumModel" />
+    </dialog>
+</navigation>

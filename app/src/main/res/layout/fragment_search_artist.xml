@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding"
+        android:hint="@string/hint_search_artist"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/btSearch"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btSearch"
+        app:layout_constraintTop_toTopOf="@+id/btSearch" />
+
+    <ImageButton
+        android:id="@+id/btSearch"
+        android:layout_width="@dimen/search_bt_size"
+        android:layout_height="@dimen/search_bt_size"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_marginEnd="@dimen/padding"
+        android:src="@drawable/ic_search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvArtists"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/padding"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch" />
+
+    <TextView
+        android:id="@+id/tvEmptyResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin"
+        android:text="@string/artist_not_found"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSearch" />
+
+    <include layout="@layout/view_progressbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
